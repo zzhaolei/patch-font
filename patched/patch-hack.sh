@@ -1,4 +1,14 @@
-fontforge -script nerd-fonts/font-patcher -s -c ttf/Hack-Bold.ttf -out ./ttf/patched
-fontforge -script nerd-fonts/font-patcher -s -c ttf/Hack-BoldItalic.ttf -out ./ttf/patched
-fontforge -script nerd-fonts/font-patcher -s -c ttf/Hack-Italic.ttf -out ./ttf/patched
-fontforge -script nerd-fonts/font-patcher -s -c ttf/Hack-Regular.ttf -out ./ttf/patched
+files=(
+    Hack-Bold.ttf
+    Hack-BoldItalic.ttf
+    Hack-Italic.ttf
+    Hack-Regular.ttf
+)
+
+in="./tmp"
+out="./tmp/patched"
+patcher="../../nerd-fonts/font-patcher"
+for file in "${files[@]}"; do
+    echo "Path: $file"
+    fontforge -script $patcher -s -c $in/$file -out $out
+done
