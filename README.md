@@ -2,6 +2,7 @@
 > For my personal use only.
 
 ## Patched Fonts
+- [SF Mono](./patched/SFMono/)
 - [Hack 4.000](./patched/Hack/)
 
 ## Patch
